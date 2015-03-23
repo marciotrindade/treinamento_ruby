@@ -1,9 +1,9 @@
 class User
+  attr_accessor :name, :age
   #def name
    # @name
   #end
 
-  attr_accessor :names, :agef
   #def name=(name)
    # @name = name
   #end
