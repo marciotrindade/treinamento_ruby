@@ -28,6 +28,12 @@ RSpec.describe Calculadora do
 			result = subject.divide(15,3)
 			expect(result).to_not eql(3)
 		end
+
+		#it "Test the value of a division by zero" do
+					
+		#	result = subject.divide(9,0)
+		#	expect(result).to be true
+		#end
 	end
  
 	describe "#multiplica" do
