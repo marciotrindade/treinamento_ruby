@@ -8,36 +8,34 @@ RSpec.describe Calculadora do
 	describe "#soma" do
 		subject { calc.soma(a,b) }
 		
-		context "soma numeros inteiros" do
-			it "should be 10" do
+		context "soma de numeros inteiros" do
+
+			it "resultado correto de uma soma" do
 				# subject.should eq 10
 				expect(subject).to eq 10
 			end
+
+			it "resultado incorreto de uma soma" do	
+				expect(subject).to_not eql 20
+			end
+
 		end
 		
-		context "soma numeros com b negativo" do
+		context "soma de numeros com b negativo" do
 			let(:b) { -1 }
 
-			it "should be 4" do
+			it "resultado da soma" do
 				# subject.should eq 4
 				expect(subject).to eq 4
 			end
 		end
 
-		context "soma numero invalido" do
+		context "soma com numero invalido" do
 			let(:a) { "a" }
 			
-			it "when a is a string" do
+			it "quando uma variável for string" do
 				#expect { subject }.to raise_error(ArgumentError, "Invalid parameters")
 				expect { subject }.to raise_error(Exception)
-			end
-
-		end
-
-		context "resultado da soma inválido" do
-			let(:b) { 3 }	
-			it "não deve ser igual a 10" do	
-				expect(subject).to_not eql 10
 			end
 		end
 	end
@@ -46,14 +44,14 @@ RSpec.describe Calculadora do
 		subject { calc.divide(a,b) }
 		let(:a) { 9 }
 
-		context "dividir numeros inteiros" do
+		context "divisão de numeros inteiros" do
 			let(:b) { 3 }
 
-			it "divisão válida" do				
+			it "resultado correto de uma divisão" do				
 				expect(subject).to eql(3)
 			end
 		
-			it "não retornar o valor exato" do
+			it "resultado incorreto de uma divisão" do
 				expect(subject).to_not eql(5)
 			end
 		end
@@ -61,54 +59,61 @@ RSpec.describe Calculadora do
 		context "divisão por zero" do
 			let(:b) { 0 }
 
-			it "divisão por zero" do				
+			it "retorna uma exceção" do				
 				expect { subject }.to raise_error(Exception)
 			end
 		end
 
-		context "divisao numero invalido" do
+		context "divisão de numeros com b negativo" do
+			let(:b) { -3 }
+
+			it "resultado da divisão" do
+				# subject.should eq -3
+				expect(subject).to eq -3
+			end
+		end
+
+		context "divisao com numero invalido" do
 			let(:a) { "a" }
 			
-			it "when a is a string" do
-				#expect { subject }.to raise_error(ArgumentError, "Invalid parameters")
+			it "quando uma variável for string" do
+				#expect { subject }.to raise_error(ArgumentError, "Invalid parameters")				
 				expect { subject }.to raise_error(Exception)
 			end
 		end
-
 	end
 
 	describe "#multiplica" do
 		subject { calc.multiplica(a,b) }
 		
-		context "multiplicacao numeros inteiros" do
-			it "should be 10" do
-				# subject.should eq 10
+		context "multiplicacao de numeros inteiros" do
+
+			it "resultado correto de uma divisão" do
+				# subject.should eq 25
 				expect(subject).to eq 25
+			end
+
+			it "resultado incorreto de uma divisão" do	
+				expect(subject).to_not eql 10
 			end
 		end
 		
-		context "multiplicacao numeros com b negativo" do
+		context "multiplicacao de numeros com b negativo" do
 			let(:b) { -1 }
 
-			it "should be -5" do
+			it "resultado da multiplicação" do
 				# subject.should eq -5
 				expect(subject).to eq -5
 			end
 		end
 
-		context "multiplicacao numero invalido" do
+		context "multiplicacao com numero invalido" do
 			let(:a) { "a" }
 			
-			it "when a is a string" do
+			it "quando uma variável for string" do
 				#expect { subject }.to raise_error(ArgumentError, "Invalid parameters")
+				#"a" * "a" == "aa"
 				expect { subject }.to_not raise_error(Exception)
-			end
-		end
-
-		context "resultado da multiplicacao inválido" do
-			let(:b) { 3 }	
-			it "não deve ser igual a 10" do	
-				expect(subject).to_not eql 10
 			end
 		end
 	end
@@ -116,37 +121,34 @@ RSpec.describe Calculadora do
 	describe "#subtrai" do
 		subject { calc.subtrai(a,b) }
 		
-		context "subtracao numeros inteiros" do
-			it "should be 10" do
-				# subject.should eq 10
+		context "subtração de numeros inteiros" do
+
+			it "resultado correto de uma divisão" do
+				# subject.should eq 0
 				expect(subject).to eq 0
+			end
+
+			it "resultado incorreto de uma divisão" do	
+				expect(subject).to_not eql 10
 			end
 		end
 		
-		context "subtracao numeros com b negativo" do
+		context "subtração de numeros com b negativo" do
 			let(:b) { -1 }
 
-			it "should be 4" do
+			it "resultado da subtração" do
 				# subject.should eq 6
 				expect(subject).to eq 6
 			end
 		end
 
-		context "subtracao numero invalido" do
+		context "subtracao com numero invalido" do
 			let(:a) { "a" }
 			
-			it "when a is a string" do
+			it "quando uma variável for string" do
 				#expect { subject }.to raise_error(ArgumentError, "Invalid parameters")
 				expect { subject }.to raise_error(Exception)
 			end
 		end
-
-		context "resultado da subtracao inválido" do
-			let(:b) { 3 }	
-			it "não deve ser igual a 10" do	
-				expect(subject).to_not eql 10
-			end
-		end
 	end
-
 end
