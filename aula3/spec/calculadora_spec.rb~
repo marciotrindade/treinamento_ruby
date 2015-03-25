@@ -1,0 +1,107 @@
+require_relative '../calculadora'
+
+RSpec.describe Calculadora do
+	let(:calc) { Calculadora.new }
+	let(:a) { "5" }
+	let(:b) { "5" }
+
+	describe "#soma" do
+		
+
+		subject { calc.soma(5,5) }
+		
+		context "somar numeros inteiros" do
+			it "should be 10" do
+				expect ( subject ).to be 10
+			end
+		end
+		
+		context "somar numeros com b negativo" do
+			let(:b) { -1 }
+
+			it { should be 4 }
+		end
+
+		context "somar numero invalido"
+			let(:a) { "a" }
+			
+			it "when a is a string" do
+				expect { subject }.to raise_error(ArgumentError, "Invalid parameters")
+				#expect { subject }.to raise_error
+			end
+
+			it "when b is a sty.." do
+			end
+		end
+
+		it "deve ser igual a 10" do					
+			result = subject.soma(5,5)
+			expect(result).to eql(10)
+		end
+	end
+	
+	describe "somar 5 e 3" do		
+		it "não deve ser igual a 10" do					
+			result = subject.soma(5,3)
+			expect(result).to_not eql(10)
+		end
+	end
+ 
+	describe "#divide" do
+		subject { calc.divide(a,b) }
+
+		it "Test the valid value of a division" do
+					
+			result = subject.divide(9,3)
+			expect(result).to eql(3)
+		end
+		
+		it "Test the invalid value of a division" do
+					
+			result = subject.divide(15,3)
+			expect(result).to_not eql(3)
+		end
+
+		#it "Test the value of a division by zero" do
+			#pending "waiting for test implementation"		
+		#	result = subject.divide(9,0)
+		#	expect(rescue).to variavel
+		#end
+
+		context "raising when exception" do
+			let(:b) { 0 }
+
+			it "should get exception" do
+				expect { subject }.to raise_error(Exception, "Nao....")
+			end
+		end
+	end
+ 
+	describe "#multiplica" do
+		it "Test the valid value of a multiplication" do
+					
+			result = subject.multiplica(9,3)
+			expect(result).to eql(27)
+		end
+		
+		it "Test the invalid value of a multiplication" do
+					
+			result = subject.multiplica(15,3)
+			expect(result).to_not eql(3)
+		end
+	end
+ 
+	describe "#subtrai" do
+		it "Test the valid value of a subtraction" do
+					
+			result = subject.subtrai(9,3)
+			expect(result).to eql(6)
+		end
+		
+		it "Test the invalid value of a subtraction" do
+					
+			result = subject.subtrai(15,3)
+			expect(result).to_not eql(3)
+		end
+	end
+
