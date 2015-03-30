@@ -1,21 +1,21 @@
 require_relative '../calculadora'
 
 RSpec.describe Calculadora do 
-  describe "teste calculator" do
-    it "calcula soma" do
-      expect(subject.soma 1,2).to eql 3 
+  describe Calculadora do
+    it '#soma' do
+      expect(subject.soma 5,2).to eql 7 
     end 
-    it "calcula divide" do
-      expect(subject.divide 10,2).to eql 5
+    it '#divide' do
+      expect(subject.divide 9,3).to eql 3
     end 
-    it "calcula multiplica" do
-      expect(subject.multiplica 3,5).to eql 15
+    it '#multiplica' do
+      expect(subject.multiplica 4,6).to eql 24
     end 
-    it "calcula subtrai" do
-      expect(subject.subtrai 10,8).to eql 2
+    it '#subtrai' do
+      expect(subject.subtrai 7,3).to eql 4
     end 
-    it "raises" do
-      expect{subject.divide 3,0}.to raise_error(ZeroDivisionError)
+    it "div by zero" do
+      expect{subject.divide 4,0}.to raise_error(ZeroDivisionError)
     end
   end  
 end
