@@ -8,7 +8,7 @@ RSpec.describe Calculadora do
       expect(resultado).to eql(3)
     end
   end
-
+# teste
   describe '#subtrai' do
     let(:resultado) { subject.subtrai(10,8) }
     it 'deve retornar a subtração dos 2 atributos' do
