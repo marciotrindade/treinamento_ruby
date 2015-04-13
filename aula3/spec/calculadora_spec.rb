@@ -1,32 +1,41 @@
 require_relative '../calculadora'
 
-RSpec.describe Calculadora do 
+RSpec.describe Calculadora do
   describe '#soma' do
-    it 'sum two numbers' do
-      expect(subject.soma 5,2).to eql 7 
-    end 
-  end
+    let(:resultado) { subject.soma(1,2) }
 
-  describe '#divide' do
-    it 'division of two numbers ' do
-      expect(subject.divide 9,3).to eql 3
-    end 
-
-    it 'division of two numbers and divisor equal zero' do
-      expect{subject.divide 4,0}.to raise_error(ZeroDivisionError)
+    it 'deve retornar a soma dos 2 atributos' do
+      expect(resultado).to eql(3)
     end
   end
 
-  describe '#multiplica' do
-    it 'multiplication of two numbers' do
-      expect(subject.multiplica 4,6).to eql 24
-    end 
-  end
-
   describe '#subtrai' do
-    it 'subtraction of two numbers' do
-      expect(subject.subtrai 7,3).to eql 4
-    end 
+    let(:resultado) { subject.subtrai(10,8) }
+    it 'deve retornar a subtração dos 2 atributos' do
+      expect(resultado).to eql(2)
+    end
   end
 
+  describe '#mutiplica' do
+    let(:resultado) { subject.multiplica(3,5) }
+    it 'deve retornar a mutiplicação dos 2 atributos' do
+      expect(resultado).to eql(15)
+    end
+  end
+
+  describe '#divide' do
+    let(:resultado) { subject.divide(10,2) }
+    it 'deve retornar o resultado' do
+      expect(resultado).to eql(5)
+    end
+
+    context 'quando divide por zero' do
+      let(:resultado) { subject.divide(3,0) }
+
+      it 'deve lança o erro de divisaão por zero' do
+        expect{ resultado }.to raise_error(ZeroDivisionError)
+      end
+    end
+  end
 end
+
