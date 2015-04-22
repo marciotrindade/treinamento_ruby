@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+  resources :users
+  resources :posts
+  resources :coments
+  
+  #resources :posts do
+  #  resources :coments
+  #end  
+  
+  root :to => 'posts#index'
+  
+  #get 'users' => 'users#index'
+  #post 'users' => 'users#create'
+  #get 'users/:id' => 'users#show'
+  #put 'users/:id' => 'users#edit'
+  #delete 'users/:id' => 'users#destroy'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
