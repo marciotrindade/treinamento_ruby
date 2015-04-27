@@ -11,14 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20150413143840) do
-
-  create_table "coments", force: :cascade do |t|
-    t.integer  "users_id"
-    t.text     "coment"
-    t.integer  "posts_id"
-=======
 ActiveRecord::Schema.define(version: 20150413115256) do
 
   create_table "comments", force: :cascade do |t|
@@ -26,47 +18,26 @@ ActiveRecord::Schema.define(version: 20150413115256) do
     t.string   "email"
     t.text     "content"
     t.integer  "post_id"
->>>>>>> 224436ee0bc7b63a44da3d97ff8a12ac58aa9658
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-<<<<<<< HEAD
-  add_index "coments", ["posts_id"], name: "index_coments_on_posts_id"
-  add_index "coments", ["users_id"], name: "index_coments_on_users_id"
-
-  create_table "posts", force: :cascade do |t|
-    t.string   "title"
-    t.text     "post"
-    t.integer  "users_id"
-=======
   add_index "comments", ["post_id"], name: "index_comments_on_post_id"
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
     t.integer  "user_id"
->>>>>>> 224436ee0bc7b63a44da3d97ff8a12ac58aa9658
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-<<<<<<< HEAD
-  add_index "posts", ["users_id"], name: "index_posts_on_users_id"
-
-  create_table "users", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.integer  "age"
-    t.string   "email"
-=======
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
     t.integer  "age"
->>>>>>> 224436ee0bc7b63a44da3d97ff8a12ac58aa9658
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
