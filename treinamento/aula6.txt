@@ -1,0 +1,11 @@
+## Aula 6 - Roteiro na prática: POST
+Model cria no singular e o Controller no plural:
+rails generate controller [nome do controller]
+Criar actions do controller que acabou de criar, exemplo index e show.
+Criar um post via rails console:
+Post.create(title: 'Primeiro post do blog', content: 'Texto do primeiro post criado no blog', user_id: '1')
+
+Criar a view (na unha) (_form e index.html.erb)
+
+Para rodar o server no nitrous: rails server -b 0.0.0.0
+
