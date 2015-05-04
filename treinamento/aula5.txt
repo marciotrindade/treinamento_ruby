@@ -1,0 +1,25 @@
+Comando Rails: rails new nome_projeto [options, ex: -T]
+
+MVC - Model View Controller
+Model - Conversa com BD, API
+View - Apenas exibição, não deve ter lógica
+Controller - Organiza a comunicação
+
+rails -h (comando de ajuda para os comando rails)
+
+rails g model user first_name:string last_name:string age:integer email:string #Cria uma tabela
+rails g model post title:string body:text user:references
+
+Migrates
+rake db:create
+rake db:migrate
+
+Criando User:
+User.create(first_name: 'Marcelo', last_name: 'Toledo', age: 34, email: 'marcelo.toledo@locaweb.com.br')
+
+Alterando um campo
+rails g migration ChangePostBody
+(incluir no código gerado: rename_column :tabela, :oldname, :newname)
+rake db:migrate
+
+Homework: criar uma tabela agora para comentários que devem estar interligada com todas as outras tabelas
