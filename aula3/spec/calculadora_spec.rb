@@ -38,3 +38,4 @@ RSpec.describe Calculadora do
     end
   end
 end
+
