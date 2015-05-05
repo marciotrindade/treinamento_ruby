@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Title:</strong>
+    <%= @post.title %>
+ </p> 
+    <strong>Author:</strong>
+    <%= @post.user.name %>
+
+  <p>
+    <%= @post.content %>
+  </p>
+
+
+<p>
+    <strong>COMENTÁRIOS:</strong>
+</p> 
+
+<table>
+  <tbody>
+    <% @comments.each do |comment| %>
+      <tr>
+        <td><%= comment.name %></td>
+        <td> | </td> 
+        <td><%= comment.content[0..20] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Back', posts_path %>
