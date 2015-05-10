@@ -1,4 +1,5 @@
 ## Aula 6 - Roteiro na prática: POST
+
 Model cria no singular e o Controller no plural:
 rails generate controller [nome do controller]
 Criar actions do controller que acabou de criar, exemplo index e show.
