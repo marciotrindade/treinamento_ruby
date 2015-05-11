@@ -1,5 +1,4 @@
 <p id="notice"><%= notice %></p>
-
   <p>
     <strong>Title:</strong>
     <%= @post.title %>
@@ -14,6 +13,22 @@
     <strong>Content:</strong>
     <%= @post.content %>
   </p>
+
+  <p>
+    <strong>Comments:</strong>
+  </p> 
+
+  <table>
+    <tbody>
+      <% @post.comments.all.each do |comment| %>
+        <tr>
+          <td><%= comment.name %></td>
+          <td> | </td> 
+          <td><%= comment.content[0..20] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>

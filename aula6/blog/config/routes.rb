@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :users
-  resources :posts, only: [:index, :show, :new, :edit]  # or except [:create, :update, :delete]
+ #resources :posts, only: [:index, :show, :new, :edit, :create]  # or except [:update, :delete]
+  resources :posts
   root:to => 'posts#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
