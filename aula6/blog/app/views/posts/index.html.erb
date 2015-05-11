@@ -10,7 +10,7 @@
 	<% @posts.each do |post| %>
 	<tr>
 		<td><%= post.id %></td>
-		<td><%= link_to post.title, action: 'show', id: post %></td>		
+		<td><%= link_to post.title, action: 'show', id: post %></td>
 		<td><%= post.content[0,50] %></td>
 		<td><%= post.user.name %></td>
 	</tr>

@@ -13,5 +13,24 @@
 	<%= @post.user.name %>
 </p>
 
+<h3>Show Comments</h3>
+
+<% @comments.each do |comment| %>
+<p>
+	<b>Name: </b>
+	<%= comment.name %>
+</p>
+<p>
+	<b>Email: </b>
+	<%= comment.email %>
+</p>
+<p>
+	<b>Content: </b>
+	<%= comment.content %>
+</p>
+
+<hr/>
+<% end %>
+
 <br/>
 <%= link_to 'Back', action: 'index' %>

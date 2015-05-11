@@ -1,0 +1,18 @@
+<h1>Show Comments</h1>
+
+<% @comments.each do |comment| %>
+<p>
+	<b>Name: </b>
+	<%= comment.name %>
+</p>
+<p>
+	<b>Email: </b>
+	<%= comment.email %>
+</p>
+<p>
+	<b>Content: </b>
+	<%= comment.content %>
+</p>
+
+<hr/>
+<% end %>
