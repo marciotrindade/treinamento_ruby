@@ -1,19 +1,18 @@
-<p id="notice"><%= notice %></p>
+<h1>Show User</h1>
 
-  <p>
-    <strong>Name:</strong>
-    <%= @user.name %>
-  </p>
+<p>
+	<b>Name: </b>
+	<%= @user.name %>
+</p>
+<p>
+	<b>Age: </b>
+	<%= @user.age %>
+</p>
+<p>
+	<b>Email: </b>
+	<%= @user.email %>
+</p>
 
-  <p>
-    <strong>Age:</strong>
-    <%= @user.age %>
-  </p>
-
-  <p>
-    <strong>Email:</strong>
-    <%= @user.email %>
-  </p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<br/>
+<%= link_to 'Edit', action: 'edit', id: @user %>
+<%= link_to 'Back', action: 'index' %>
