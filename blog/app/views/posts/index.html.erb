@@ -1,0 +1,14 @@
+<h1>Listing Posts</h1>
+
+  <tbody>
+    <% @posts.each do |post| %>
+      
+    <br><%= link_to post.title, post %> </br>
+       <br>Content: <%= post.content %></br>
+       <br>Autor: <%= post.user.name %></br>
+    <% end %>
+  </tbody>
+
+
+
+
