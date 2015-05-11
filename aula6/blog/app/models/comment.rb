@@ -11,6 +11,6 @@ class Comment < ActiveRecord::Base
 
 	private
 	def primeira_letra_deve_ser_maiuscula
-  		errors.add(:name, " - primeira letra do titulo deve ser maiúscula") unless nome =~ /[A-Z].*/
+  		errors.add(:name, " - primeira letra do titulo deve ser maiúscula") unless name =~ /[A-Z].*/
 	end	
 end

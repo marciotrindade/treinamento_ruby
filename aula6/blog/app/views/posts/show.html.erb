@@ -1,0 +1,17 @@
+<h1>Show Post</h1>
+
+<p>
+	<b>Title: </b>
+	<%= @post.title %>
+</p>
+<p>
+	<b>Content: </b>
+	<%= @post.content %>
+</p>
+<p>
+	<b>Author: </b>
+	<%= @post.user.name %>
+</p>
+
+<br/>
+<%= link_to 'Back', action: 'index' %>
